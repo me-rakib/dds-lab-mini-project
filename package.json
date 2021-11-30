@@ -1,0 +1,23 @@
+{
+  "name": "mini-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tailwindcss -i ./src/tailwind.css -o ./output/tailwind.css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/me-rakib/dds-lab-mini-project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/me-rakib/dds-lab-mini-project/issues"
+  },
+  "homepage": "https://github.com/me-rakib/dds-lab-mini-project#readme",
+  "devDependencies": {
+    "tailwindcss": "^2.2.19"
+  }
+}

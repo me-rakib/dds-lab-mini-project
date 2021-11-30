@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities
+{
+    @responsive 
+    {
+        .text-s
+        {
+            font-size: 12px;
+        }
+    }
+}
