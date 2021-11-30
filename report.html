@@ -3,16 +3,58 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="description" content="This webpage is for presenting question">
+    <meta name="keywords" content="dds, dds-lab, nitk-dds">
+    <meta name="author" content="Group-9">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
+    <!-- ===== BOX ICON ===== -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
+    <!-- ===== Fonts ===== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&family=Roboto:wght@400;500&display=swap"
+        rel="stylesheet">
+
     <!-- ===== CSS ======  -->
     <link rel="stylesheet" href="./output/tailwind.css">
-    <title>Document</title>
+
+    <!-- ===== Title ===== -->
+    <title>Question - Group 9</title>
 </head>
 
-<body class="h-screen flex justify-center items-center">
-    <p class="text-5xl">Under Maintenance!</p>
+<body class="h-screen bg-gray-100">
+
+    <!-- ===== Heading ===== -->
+    <div class="h-16 bg-white shadow-lg flex items-center justify-center relative">
+        <h1 class="text-center font-semibold font-lora text-lg uppercase ">CS203- Design of Digital System Laboratory
+        </h1>
+        <div class="absolute text-2xl right-4 text-gray-400">
+            <a class="mr-3" href="./question.html">
+                <i class='bx bxs-home-smile  hover:text-gray-500'></i>
+            </a>
+            <a href="#">
+                <i class='bx bxs-report text-gray-600'></i>
+            </a>
+        </div>
+    </div>
+
+    <!--  -->
+    <div class="relative w-full" style="height: calc(100vh - 4rem)">
+        <div class="h-4/5 w-2/12 left-4 bg-white flex flex-col justify-center items-center space-y-5 uppercase font-roboto absolute shadow-lg rounded-xl" style="top: 50%; transform: translateY(-50%);">
+            <a class="block" href="#">Aim</a>
+            <a class="block" href="#">Theory</a>
+            <a class="block" href="#">Procedure</a>
+            <a class="block" href="#">Simulation</a>
+            <a class="block" href="#">Reference</a>
+        </div>
+
+        <div class="bg-white rounded-xl flex justify-center items-center shadow-xl absolute right-4" style="height: 90%; width: 78%; top: 50%; transform: translateY(-50%)">
+            <p class="text-5xl">Under Maintenance</p>
+        </div>
+    </div>
 </body>
 
 </html>
