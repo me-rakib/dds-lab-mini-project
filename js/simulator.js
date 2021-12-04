@@ -1,3 +1,4 @@
+// ===== Button and input =====
 const getX = document.getElementById("x");
 const getY = document.getElementById("y");
 const getA = document.getElementById("a");
@@ -11,6 +12,7 @@ const getH = document.getElementById("h");
 const checkBtn = document.getElementById("check-btn");
 const tableBody = document.getElementById("table-body");
 
+// ===== Create a td tag =====
 const createTd = (value) => {
   const td = document.createElement("td");
   td.innerText = value;
@@ -19,6 +21,7 @@ const createTd = (value) => {
   return td;
 };
 
+// ===== Creating a row =====
 const createRow = (x, y, fault, exps, expc, fRes) => {
   const tr = document.createElement("tr");
   const td1 = createTd(`${x} ${y}`);
@@ -30,11 +33,15 @@ const createRow = (x, y, fault, exps, expc, fRes) => {
   const td4 = createTd(expc);
   tr.appendChild(td4);
   const td5 = createTd(fRes.s);
+
+  // ===== Wrong Mark for sum =====
   if (exps != fRes.s) {
     td5.classList.add("bg-red-300");
   }
   tr.appendChild(td5);
   const td6 = createTd(fRes.c);
+
+  // ===== Wrong Mark for carry =====
   if (expc != fRes.c) {
     td6.classList.add("bg-red-300");
   }
@@ -42,6 +49,7 @@ const createRow = (x, y, fault, exps, expc, fRes) => {
   tableBody.appendChild(tr);
 };
 
+// ===== Validate Input =====
 const checkNum = (num) => {
   if (!isNaN(num) && num != "" && (num == 1) | (num == 0)) {
     return true;
@@ -50,6 +58,7 @@ const checkNum = (num) => {
   }
 };
 
+// ===== x XOR y =====
 const getSum = (x, y) => {
   if (x == 0 && y == 0) {
     return 0;
@@ -62,6 +71,7 @@ const getSum = (x, y) => {
   }
 };
 
+// ===== x AND y =====
 const getCarry = (x, y) => {
   if (x == 0 && y == 0) {
     return 0;
@@ -74,6 +84,7 @@ const getCarry = (x, y) => {
   }
 };
 
+// ===== return 1 or 0
 const zeroOrOne = (v) => {
   let r;
   if (v.value == 0) {
@@ -85,6 +96,7 @@ const zeroOrOne = (v) => {
   return r;
 };
 
+// ===== Fault =====
 const getFault = () => {
   let fault = {};
   if (checkNum(getA.value)) {
@@ -115,6 +127,7 @@ const getFault = () => {
   return fault;
 };
 
+// ===== Fault Res =====
 const getFaultRes = (x, y, flt) => {
   let tx = x;
   let ty = y;
@@ -153,6 +166,7 @@ const getFaultRes = (x, y, flt) => {
   return res;
 };
 
+// ===== Getting Result =====
 checkBtn.addEventListener("click", () => {
   const x = getX.value;
   const y = getY.value;
