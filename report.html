@@ -37,7 +37,7 @@
 
     <!--  -->
     <div class="relative w-full" style="height: calc(100vh - 4rem)">
-        <div class="h-4/5 w-2/12 left-4 bg-white flex flex-col justify-center items-center space-y-5 uppercase font-roboto absolute shadow-lg rounded-xl"
+        <div class="h-4/5 w-2/12 left-4 bg-white flex flex-col justify-center items-center space-y-5 uppercase font-lora absolute shadow-lg rounded-xl"
             style="top: 50%; transform: translateY(-50%);">
             <a class="block" href="#">Aim</a>
             <a class="block" href="#">Theory</a>
@@ -46,9 +46,31 @@
             <a class="block" href="#">Reference</a>
         </div>
 
-        <div class="bg-white rounded-xl flex justify-center items-center shadow-xl absolute right-4"
+        <div class="bg-white p-5 rounded-xl shadow-xl absolute right-4"
             style="height: 90%; width: 78%; top: 50%; transform: translateY(-50%)">
-            <p class="text-5xl">Under Maintenance</p>
+            <h2 class="text-center mb-1 text-lg font-lora">SA0 and SA1 fault on a half adder circuit</h2>
+            <hr class="w-3/5 h-0.5 mx-auto bg-gray-300">
+
+            <!-- ===== Procedure ===== -->
+            <section class="font-sans">
+                <h2 class="mb-1 text-center font-lora text-lg">Procedure</h2>
+                <hr class="w-2/5 mb-2 mx-auto h-0.5 bg-gray-300">
+                <p>Step - 1: Give the input of x and y. Here x and y can be either 0 or 1.</p>
+                <p>Step - 2: If you want to enable fault in any position, I.e., faults on a, b, c, d, e, f, g, or on
+                    position h - input fault type.</p>
+                <p>Step - 3: For SA0 - give input 0; for SA1 - input should be 1.</p>
+                <p>Step - 4: Click on the Check button to get the result on the truth table. </p>
+                <p>Step - 5: For further simulation - repeat steps from 1 to 4.</p>
+            </section>
+
+            <!-- ===== Reference ===== -->
+            <section class="mt-5">
+                <h2 class="mb-1 text-center font-lora text-lg">Reference</h2>
+                <hr class="w-2/5 mb-2 mx-auto h-0.5 bg-gray-300">
+                <ul class="pl-5 list-disc"> 
+                    <li>Digital Design, 5th Edition By M. Morris Mano And Michael Ciletti</li>
+                </ul>
+            </section>
         </div>
     </div>
 </body>
