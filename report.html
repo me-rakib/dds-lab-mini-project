@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="This webpage is for presenting question">
+    <meta name="description" content="This webpage is for presenting report text">
     <meta name="keywords" content="dds, dds-lab, nitk-dds">
     <meta name="author" content="Group-9">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="./output/tailwind.css">
 
     <!-- ===== Title ===== -->
-    <title>Question - Group 9</title>
+    <title>Report - Group 9</title>
 </head>
 
 <body class="h-screen bg-gray-100">
@@ -39,38 +39,162 @@
     <div class="relative w-full" style="height: calc(100vh - 4rem)">
         <div class="h-4/5 w-2/12 left-4 bg-white flex flex-col justify-center items-center space-y-5 uppercase font-lora absolute shadow-lg rounded-xl"
             style="top: 50%; transform: translateY(-50%);">
-            <a class="block" href="#">Aim</a>
-            <a class="block" href="#">Theory</a>
-            <a class="block" href="#">Procedure</a>
-            <a class="block" href="./simulator.html">Simulation</a>
-            <a class="block" href="#">Reference</a>
+            <a class="block rounded-md bg-green-50 w-4/5 pl-2 hover:bg-green-100" href="#aim">Aim</a>
+            <a class="block rounded-md bg-green-50 w-4/5 pl-2 hover:bg-green-100" href="#theory">Theory</a>
+            <a class="block rounded-md bg-green-50 w-4/5 pl-2 hover:bg-green-100" href="#procedure">Procedure</a>
+            <a class="block rounded-md bg-green-50 w-4/5 pl-2 hover:bg-green-100"
+                href="./simulator.html">Simulation</a>
+            <a class="block rounded-md bg-green-50 w-4/5 pl-2 hover:bg-green-100" href="#reference">Reference</a>
         </div>
 
-        <div class="bg-white p-5 rounded-xl shadow-xl absolute right-4"
+        <div class="bg-white py-5 pl-10  font-lora rounded-xl shadow-xl absolute right-4"
             style="height: 90%; width: 78%; top: 50%; transform: translateY(-50%)">
-            <h2 class="text-center mb-1 text-lg font-lora">SA0 and SA1 fault on a half adder circuit</h2>
-            <hr class="w-3/5 h-0.5 mx-auto bg-gray-300">
+            <div class="h-full overflow-y-scroll">
+                <h2 class="text-center font-bold text-lg font-lora mb-5">SA0 and SA1 fault on a half adder circuit</h2>
 
-            <!-- ===== Procedure ===== -->
-            <section class="font-sans">
-                <h2 class="mb-1 text-center font-lora text-lg">Procedure</h2>
-                <hr class="w-2/5 mb-2 mx-auto h-0.5 bg-gray-300">
-                <p>Step - 1: Give the input of x and y. Here x and y can be either 0 or 1.</p>
-                <p>Step - 2: If you want to enable fault in any position, I.e., faults on a, b, c, d, e, f, g, or on
-                    position h - input fault type.</p>
-                <p>Step - 3: For SA0 - give input 0; for SA1 - input should be 1.</p>
-                <p>Step - 4: Click on the Check button to get the result on the truth table. </p>
-                <p>Step - 5: For further simulation - repeat steps from 1 to 4.</p>
-            </section>
+                <!-- ===== Aim ===== -->
+                <section class="mb-5" id="aim">
+                    <h2 class="font-bold text-lg">Aim</h2>
+                    <p>Detection of both SA0 and SA1 faults on a half-adder circuit implemented by AND and XOR gates.
+                    </p>
+                </section>
 
-            <!-- ===== Reference ===== -->
-            <section class="mt-5">
-                <h2 class="mb-1 text-center font-lora text-lg">Reference</h2>
-                <hr class="w-2/5 mb-2 mx-auto h-0.5 bg-gray-300">
-                <ul class="pl-5 list-disc"> 
-                    <li>Digital Design, 5th Edition By M. Morris Mano And Michael Ciletti</li>
-                </ul>
-            </section>
+                <!-- ===== Theory ===== -->
+                <section class="mb-5 space-y-1" id="theory">
+                    <h2 class="font-bold text-lg">Theory</h2>
+                    <p>
+                        Fault is a logic level abstraction of a physical defect. It is used to describe the change in
+                        the
+                        logic function of a device caused by the defect. Fault abstractions reduce the number of
+                        conditions
+                        that must be considered in deriving tests.
+                    </p>
+                    <p>
+                        Logical faults are used to represent physical faults. They simplify the fault analysis process
+                        and
+                        reduces the number of faults.
+                    </p>
+                    <p>
+                        A stuck-at fault (SAF) is a logic-level fault that mimics a manufacturing defect on a digital
+                        circuit. An SAF is of two types- stuck-at-0 (SA0) and stuck-at-1 (SA1) faults. Individual bit or
+                        signal on a wire of a logic gate is assumed to be stuck at Logical '1' or '0' if that bit or the
+                        signal is converted to logic-1 or logic-0 irrespective of its previous or assigned value.
+                    </p>
+                    <h2 class="text-lg pt-5 font-bold">Half-Adder</h2>
+                    <p>
+                        A half-adder is a combinational circuit that is used to add two binary digits. This simple
+                        addition
+                        consists of four possible elementary operations, namely, 0+0=0, 0+1=1, 1+0=1 and 1+1=10. The
+                        first
+                        three operations produce a sum that is one bit long, but when both augend and addend bits are
+                        equal
+                        to logical 1, the binary sum consists of two digits. The higher significant bit of this result
+                        is
+                        called a carry. When the augend and addend numbers contain more significant digits, the carry
+                        obtained from the addition of two bits is added to the next higher-order pair of significant
+                        bits.
+                    </p>
+                    <p>
+                        The half adder is named so due to the fact that two half adders can be employed to implement a
+                        full
+                        adder. It needs two input and two output bits. The input variables designate the augend and
+                        addend
+                        bits, while the output bits produce the sum and the carry.
+                    </p>
+                    <p>
+                        The truth table of the half adder is as shown below. The inputs are designated as x and y, while
+                        the
+                        S represents the sum output and the C represents the carry output.
+                    </p>
+                    <div class="bg-green-50 p-2 rounded-sm">
+                        <table class="w-1/5 text-center mx-auto table-auto">
+                            <thead>
+                                <tr>
+                                    <th colspan="2">Input</th>
+                                    <th colspan="2">Output</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>A</td>
+                                    <td>B</td>
+                                    <td>S</td>
+                                    <td>C</td>
+                                </tr>
+                                <tr>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                </tr>
+                                <tr>
+                                    <td>0</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>0</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>0</td>
+                                    <td>1</td>
+                                    <td>0</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>0</td>
+                                    <td>1</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p class="text-center">Fig - Truth Table</p>
+                    </div>
+                    <p>
+                        The carry output is 0 unless both the inputs are 1. The S(sum) output represents the least
+                        significant bit of the addition operation.
+                    </p>
+                    <p>
+                        The simplified Boolean expressions for the two outputs can be obtained directly from the truth
+                        table. They are:
+                    </p>
+                    <div class="bg-green-50 p-2 rounded-sm">
+                        <p class="text-center font-bold">
+                            S = xy’ + x’y
+                        </p>
+                        <p class="text-center font-bold">
+                            C = xy
+                        </p>
+                    </div>
+                    <p>
+                        Thus, the sum is the result of performing an EXOR operation on the input variables, while the
+                        carry
+                        output is obtained by ANDing the two input variables. We can therefore use an exclusive-OR gate
+                        and
+                        an AND gate to implement the half adder circuit as shown below.
+                    </p>
+                    <img class="w-60 pt-2 mx-auto" src="./img/half-adder.png">
+                    <p class="text-center text-sm">Fig - Half Adder</p>
+                </section>
+
+                <!-- ===== Procedure ===== -->
+                <section class="mb-5" id="procedure">
+                    <h2 class="font-bold text-lg">Procedure</h2>
+                    <p>Step - 1: Give the input of x and y. Here x and y can be either 0 or 1.</p>
+                    <p>Step - 2: If you want to enable fault in any position, I.e., faults on a, b, c, d, e, f, g, or on
+                        position h - input fault type.</p>
+                    <p>Step - 3: For SA0 - give input 0; for SA1 - input should be 1.</p>
+                    <p>Step - 4: Click on the Check button to get the result on the truth table. </p>
+                    <p>Step - 5: For further simulation - repeat steps from 1 to 4.</p>
+                </section>
+
+                <!-- ===== Reference ===== -->
+                <section id="reference">
+                    <h2 class="font-bold text-lg">Reference</h2>
+                    <ul class="pl-5 list-disc">
+                        <li>Digital Design, 5th Edition By M. Morris Mano And Michael Ciletti</li>
+                    </ul>
+                </section>
+            </div>
         </div>
     </div>
 </body>
