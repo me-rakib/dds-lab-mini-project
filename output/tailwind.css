@@ -672,10 +672,6 @@ video {
   margin-top: 0.5rem;
 }
 
-.mr-3{
-  margin-right: 0.75rem;
-}
-
 .mb-1{
   margin-bottom: 0.25rem;
 }
@@ -768,20 +764,12 @@ video {
   width: 15rem;
 }
 
-.w-6\/12{
-  width: 50%;
-}
-
 .w-3\/6{
   width: 50%;
 }
 
 .w-10{
   width: 2.5rem;
-}
-
-.w-5\/12{
-  width: 41.666667%;
 }
 
 .table-auto{
@@ -818,6 +806,12 @@ video {
 
 .gap-3{
   gap: 0.75rem;
+}
+
+.space-x-2 > :not([hidden]) ~ :not([hidden]){
+  --tw-space-x-reverse: 0;
+  margin-right: calc(0.5rem * var(--tw-space-x-reverse));
+  margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
 .space-y-5 > :not([hidden]) ~ :not([hidden]){
@@ -986,11 +980,6 @@ video {
   line-height: 2.5rem;
 }
 
-.text-2xl{
-  font-size: 1.5rem;
-  line-height: 2rem;
-}
-
 .text-3xl{
   font-size: 1.875rem;
   line-height: 2.25rem;
@@ -1025,9 +1014,9 @@ video {
   color: rgba(156, 163, 175, var(--tw-text-opacity));
 }
 
-.text-gray-600{
+.text-gray-500{
   --tw-text-opacity: 1;
-  color: rgba(75, 85, 99, var(--tw-text-opacity));
+  color: rgba(107, 114, 128, var(--tw-text-opacity));
 }
 
 .text-gray-800{
@@ -1058,6 +1047,10 @@ video {
 .hover\:bg-yellow-300:hover{
   --tw-bg-opacity: 1;
   background-color: rgba(252, 211, 77, var(--tw-bg-opacity));
+}
+
+.hover\:font-semibold:hover{
+  font-weight: 600;
 }
 
 .hover\:text-gray-500:hover{
