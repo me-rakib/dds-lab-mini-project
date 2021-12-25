@@ -9,9 +9,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- ===== BOX ICON ===== -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
-
     <!-- ===== CSS ======  -->
     <link rel="stylesheet" href="./output/tailwind.css">
 
@@ -19,73 +16,81 @@
     <title>DDS Lab Mini Project</title>
 </head>
 
-<body class="h-screen w-full flex justify-center items-center bg-gray-100">
-
-    <div class="bg-white w-4/6 p-8 rounded-xl shadow-xl relative">
-
-        <!-- ===== Heading ===== -->
-        <div class="text-center mb-5">
-            <img class="mx-auto w-16 mb-2" src="./img/logo.png">
-            <h1 class="font-semibold font-lora text-lg uppercase">National Institute of Technology
-                Karnataka,<br>Surathkal -
-                575025
-            </h1>
-        </div>
-
-        <div class="text-center mb-3">
-
-            <!-- ===== Sub Heading ===== -->
-            <div class="mb-5 font-medium font-lora">
-                <p class="">Design of Digital Systems Lab (CS203)</p>
-                <h2>Mini Project Report - Group 9</h2>
-            </div>
-
-            <!-- ===== Member names ===== -->
-            <div>
-                <h3 class="font-roboto font-medium text-sm"> Submitted By</h3>
-                <hr class="w-1/5 h-0.5 mx-auto bg-gray-300">
-                <div class="mt-2">
-                    <p class="uppercase text-s font-roboto">Chirag R</p>
-                    <p class="text-sm font-light">201CS170</p>
-                    <p class="text-sm font-light">(Group Leader)</p>
-                </div>
-
-                <div class="grid grid-cols-2 gap-3">
-                    <div>
-                        <p class="uppercase text-s font-roboto">Md Rakib Hasan</p>
-                        <p class="text-sm font-light">201CS132</p>
-                    </div>
-
-                    <div>
-                        <p class="uppercase text-s font-roboto">Attada Ramprasad</p>
-                        <p class="text-sm font-light">201CS210</p>
-                    </div>
-
-                    <div>
-                        <p class="uppercase text-s font-roboto">Hari Chetan Kurapati</p>
-                        <p class="text-sm font-light">201CS119</p>
-                    </div>
-
-                    <div>
-                        <p class="uppercase text-s font-roboto">aniketh narayan bellala</p>
-                        <p class="text-sm font-light">201CS108</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- ===== Submited to text ===== -->
-        <div class="text-center">
-            <h3 class="font-roboto font-medium text-sm">Submitted To</h3>
-            <hr class="w-2/5 h-0.5 mx-auto bg-gray-300">
-            <p class="uppercase font-roboto mt-2">Dr. Biswajit R Bhowmik</p>
-            <p class="text-sm font-light ">Assistant Professor, Department of CSE</p>
-        </div>
-
-        <div class="absolute top-1/2 right-6">
-            <a href="./question.html">
-                <i class='bx bxs-log-in-circle text-gray-400 text-4xl hover:text-gray-500 cursor-pointer'></i>
+<body class="h-screen w-full bg-gray-100">
+    <!-- ===== Heading ===== -->
+    <div class="h-16 bg-white shadow-lg flex items-center justify-center relative">
+        <h1 class="text-center font-semibold font-lora text-lg uppercase ">CS203- Design of Digital System Laboratory
+        </h1>
+        <div class="absolute right-4 space-x-2 text-gray-400">
+            <a class="text-gray-500 font-semibold" href="./index.html">Home
             </a>
+            <a class="hover:text-gray-500 hover:font-semibold" href="./report.html">Report</a>
+            <a class=" hover:text-gray-500 hover:font-semibold" href="./simulator.html">Simulator</a>
+        </div>
+    </div>
+
+    <div class="flex justify-center items-center" style="height: calc(100vh - 4rem)">
+        <div class="bg-white w-4/6 p-5 rounded-xl shadow-xl relative">
+
+            <!-- ===== Heading ===== -->
+            <div class="text-center mb-5">
+                <img class="mx-auto w-16 mb-2" src="./img/logo.png">
+                <h1 class="font-semibold font-lora text-lg uppercase">National Institute of Technology
+                    Karnataka,<br>Surathkal -
+                    575025
+                </h1>
+            </div>
+
+            <div class="text-center mb-3">
+
+                <!-- ===== Sub Heading ===== -->
+                <div class="mb-5 font-medium font-lora">
+                    <p class="">Design of Digital Systems Lab (CS203)</p>
+                    <h2>Mini Project Report - Group 9</h2>
+                </div>
+
+                <!-- ===== Member names ===== -->
+                <div>
+                    <h3 class="font-roboto font-medium text-sm"> Submitted By</h3>
+                    <hr class="w-1/5 h-0.5 mx-auto bg-gray-300">
+                    <div class="mt-2">
+                        <p class="uppercase text-s font-roboto">Chirag R</p>
+                        <p class="text-sm font-light">201CS170</p>
+                        <p class="text-sm font-light">(Group Leader)</p>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-3">
+                        <div>
+                            <p class="uppercase text-s font-roboto">Md Rakib Hasan</p>
+                            <p class="text-sm font-light">201CS132</p>
+                        </div>
+
+                        <div>
+                            <p class="uppercase text-s font-roboto">Attada Ramprasad</p>
+                            <p class="text-sm font-light">201CS210</p>
+                        </div>
+
+                        <div>
+                            <p class="uppercase text-s font-roboto">Hari Chetan Kurapati</p>
+                            <p class="text-sm font-light">201CS119</p>
+                        </div>
+
+                        <div>
+                            <p class="uppercase text-s font-roboto">aniketh narayan bellala</p>
+                            <p class="text-sm font-light">201CS108</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== Submited to text ===== -->
+            <div class="text-center">
+                <h3 class="font-roboto font-medium text-sm">Submitted To</h3>
+                <hr class="w-2/5 h-0.5 mx-auto bg-gray-300">
+                <p class="uppercase font-roboto mt-2">Dr. Biswajit R Bhowmik</p>
+                <p class="text-sm font-light ">Assistant Professor, Department of CSE</p>
+            </div>
+
         </div>
     </div>
 </body>
