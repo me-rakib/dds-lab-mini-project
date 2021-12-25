@@ -96,74 +96,122 @@ const zeroOrOne = (v) => {
   return r;
 };
 
-// ===== Fault =====
+// ===== Faults =====
 const getFault = () => {
-  let fault = {};
+  let faults = [];
   if (checkNum(getA.value)) {
+    let fault = {};
     fault.f = "a";
     fault.v = zeroOrOne(getA);
-  } else if (checkNum(getB.value)) {
+    faults.push(fault);
+  }
+  if (checkNum(getB.value)) {
+    let fault = {};
     fault.f = "b";
     fault.v = zeroOrOne(getB);
-  } else if (checkNum(getC.value)) {
+    faults.push(fault);
+  }
+  if (checkNum(getC.value)) {
+    let fault = {};
     fault.f = "c";
     fault.v = zeroOrOne(getC);
-  } else if (checkNum(getD.value)) {
+    faults.push(fault);
+  }
+  if (checkNum(getD.value)) {
+    let fault = {};
     fault.f = "d";
     fault.v = zeroOrOne(getD);
-  } else if (checkNum(getE.value)) {
+    faults.push(fault);
+  }
+  if (checkNum(getE.value)) {
+    let fault = {};
     fault.f = "e";
     fault.v = zeroOrOne(getE);
-  } else if (checkNum(getF.value)) {
+    faults.push(fault);
+  }
+  if (checkNum(getF.value)) {
+    let fault = {};
     fault.f = "f";
     fault.v = zeroOrOne(getF);
-  } else if (checkNum(getG.value)) {
+    faults.push(fault);
+  }
+  if (checkNum(getG.value)) {
+    let fault = {};
     fault.f = "g";
     fault.v = zeroOrOne(getG);
-  } else if (checkNum(getH.value)) {
+    faults.push(fault);
+  }
+  if (checkNum(getH.value)) {
+    let fault = {};
     fault.f = "h";
     fault.v = zeroOrOne(getH);
+    faults.push(fault);
   }
-  return fault;
+  return faults;
 };
 
 // ===== Fault Res =====
-const getFaultRes = (x, y, flt) => {
+const getAllFaults = (f) => {
+  let temp = "";
+  f.forEach((v) => {
+    let txt = `${v.f} SA${v.v}, `;
+    temp = temp.concat(txt);
+  });
+  return temp.slice(0, temp.length - 2);
+};
+
+// fault sum
+const getFaultSum = (x, y, faults) => {
   let tx = x;
   let ty = y;
-  let res = {};
-  if (flt.f == "a") {
-    x = flt.v;
-    res.s = getSum(x, y);
-    res.c = getCarry(x, y);
-  } else if (flt.f == "b") {
-    y = flt.v;
-    res.s = getSum(x, y);
-    res.c = getCarry(x, y);
-  } else if (flt.f == "c") {
-    x = flt.v;
-    res.s = getSum(x, y);
-    res.c = getCarry(tx, ty);
-  } else if (flt.f == "d") {
-    y = flt.v;
-    res.s = getSum(x, y);
-    res.c = getCarry(tx, ty);
-  } else if (flt.f == "e") {
-    x = flt.v;
-    res.s = getSum(tx, ty);
-    res.c = getCarry(x, y);
-  } else if (flt.f == "f") {
-    y = flt.v;
-    res.s = getSum(tx, ty);
-    res.c = getCarry(x, y);
-  } else if (flt.f == "g") {
-    res.s = flt.v;
-    res.c = getCarry(tx, ty);
-  } else if (flt.f == "h") {
-    res.s = getSum(tx, ty);
-    res.c = flt.v;
+  let ts = "";
+  faults.forEach((v) => {
+    if (v.f == "a") {
+      tx = v.v;
+    } else if (v.f == "c") {
+      tx = v.v;
+    } else if (v.f == "b") {
+      ty = v.v;
+    } else if (v.f == "d") {
+      ty = v.v;
+    } else if (v.f == "g") {
+      ts = v.v;
+    }
+  });
+  if (ts !== "") {
+    return ts;
+  } else {
+    return getSum(tx, ty);
   }
-  return res;
+};
+
+// fault carry
+const getFaultCarry = (x, y, faults) => {
+  let tx = x;
+  let ty = y;
+  let tc = "";
+  faults.forEach((v) => {
+    if (v.f == "a") {
+      tx = v.v;
+    } else if (v.f == "c") {
+      tx = v.v;
+    } else if (v.f == "b") {
+      ty = v.v;
+    } else if (v.f == "d") {
+      ty = v.v;
+    } else if (v.f == "e") {
+      tx = v.v;
+    } else if (v.f == "f") {
+      ty = v.v;
+    } else if (v.f == "h") {
+      tc = v.v;
+    }
+  });
+  if (tc !== "") {
+    return tc;
+  } else {
+    return getCarry(tx, ty);
+  }
 };
 
 // ===== Getting Result =====
@@ -174,16 +222,24 @@ checkBtn.addEventListener("click", () => {
   getY.value = "";
 
   let faults = getFault();
+  const getAllFault = getAllFaults(faults);
+
+  const sum = getFaultSum(x, y, faults);
+  const carry = getFaultCarry(x, y, faults);
+
+  let flt = "";
   let fRes = {};
-  if (Object.keys(faults) == 0) {
-    faults = "N/A";
+  if (faults.length == 0) {
+    flt = "N/A";
     fRes.s = getSum(x, y);
     fRes.c = getCarry(x, y);
   } else {
-    fRes = getFaultRes(x, y, faults);
-    faults = `${faults.f} SA${faults.v}`;
+    fRes.s = getFaultSum(x, y, faults);
+    fRes.c = getFaultCarry(x, y, faults);
+    flt = getAllFault;
   }
+
   if (checkNum(x) && checkNum(x)) {
-    createRow(x, y, faults, getSum(x, y), getCarry(x, y), fRes);
+    createRow(x, y, flt, getSum(x, y), getCarry(x, y), fRes);
   }
 });
